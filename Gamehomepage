@@ -1,0 +1,403 @@
+
+<html>
+<head>
+   
+    <script >
+
+
+var count=0,r=0,b=0;
+var score=0;
+function ci(x) {
+    if(count%2==0){r=x ;}
+    else{b=x;}
+    count++;
+
+
+    
+if(r!=0 && b!=0){
+if((r==1 && b==15)||(r==15 && b==1)){score++;document.getElementById('1').innerHTML='';document.getElementById('15').innerHTML='';} 
+else if((r==2 && b==7)||(r==7 && b==2)){score++;document.getElementById('2').innerHTML='';document.getElementById('7').innerHTML='';} 
+else if((r==3 && b==9)||(r==9 && b==3)){score++;document.getElementById('3').innerHTML='';document.getElementById('9').innerHTML='';} 
+else if((r==4 && b==16)||(r==16 && b==4)){score++;document.getElementById('4').innerHTML='';document.getElementById('16').innerHTML='';} 
+else if((r==5 && b==13)||(r==13 && b==5)){score++;document.getElementById('5').innerHTML='';document.getElementById('13').innerHTML='';} 
+else if((r==6 && b==11)||(r==11 && b==6)){score++;document.getElementById('6').innerHTML='';document.getElementById('11').innerHTML='';} 
+else if((r==12 && b==19)||(r==19 && b==12)){score++;document.getElementById('12').innerHTML='';document.getElementById('19').innerHTML='';} 
+else if((r==8 && b==17)||(r==17 && b==8)){score++;document.getElementById('8').innerHTML='';document.getElementById('17').innerHTML='';} 
+else if((r==10 && b==14)||(r==14 && b==10)){score++;document.getElementById('10').innerHTML='';document.getElementById('14').innerHTML='';} 
+else if((r==18 && b==20)||(r==20 && b==18)){score++;document.getElementById('18').innerHTML='';document.getElementById('20').innerHTML='';} 
+
+}
+document.getElementById('score').innerHTML=+score;
+if(r>0 && b>0){r=0;b=0;}
+if(score==10){
+    document.getElementById('life').innerHTML='🥳🎉WON THE GAME🎉🥳';
+}
+
+}
+</script>
+</head>
+
+<body style="background-image: url('https://images.pexels.com/photos/3178786/pexels-photo-3178786.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');">
+<style>
+
+.flip-card {
+    border: 1px solid #B97A57;
+    background-color: transparent;
+    width: 100px;
+    height: 100px;
+    perspective: 1000px;
+    font-family: sans-serif;
+  }
+  
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    transition: transform 0.1s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateX(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+   
+    
+  }
+  img {
+      width: 100px;
+      height: 100px;
+  }
+  
+  
+  .flip-card-back {
+    background: linear-gradient(120deg, rgb(255, 174, 145) 30%, coral 88%,
+       bisque 40%, rgb(255, 185, 160) 78%);
+    color: white;
+    transform: rotateX(180deg);
+  }
+ button {
+  color: text;
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #B97A57;
+  border: 3px solid white;
+  transition: all .3s;
+}
+</style>
+
+
+<center>
+
+<h1 style="color:white;">Memory Game</h1>
+
+<marquee direction="right" style="background-color:#B97A57;color:white;">LETS PLAY A GAME</marquee>
+
+<br>
+<br>
+
+<div id="box">
+<table id="table">
+<tr>
+<td id="1" >
+<div class="flip-card">
+<div class="flip-card-inner">
+<div  class="flip-card-front">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdm_YevNHkOA9ku2M4xHDYFrrNIPiW8IyjcQ&usqp=CAU">
+</div>
+<div onclick="ci(1)" class="flip-card-back">
+<img src="https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg">
+</div>
+</div>
+</div>
+</td>
+
+<td id="2">
+<div  class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdm_YevNHkOA9ku2M4xHDYFrrNIPiW8IyjcQ&usqp=CAU">
+</div>
+<div  onclick="ci(2)" class="flip-card-back">
+<img  src="https://thumbs.dreamstime.com/z/pathway-forest-plitvice-lakes-croatia-deep-sunshine-48930618.jpg">
+</div>
+</div>
+</div>
+</td>
+
+<td id="3">
+<div  class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdm_YevNHkOA9ku2M4xHDYFrrNIPiW8IyjcQ&usqp=CAU">
+</div>
+<div  onclick="ci(3)"class="flip-card-back">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Erd7fKUUY2NoYNpcWp65_0x7CK_txAEhRrheaSQGD003degehhoanMugib8snbLdRro&usqp=CAU">
+</div>
+</div>
+</div>
+</td>
+                   
+<td id="4" >
+<div  class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdm_YevNHkOA9ku2M4xHDYFrrNIPiW8IyjcQ&usqp=CAU">
+</div>
+<div onclick="ci(4)"class="flip-card-back">
+<img src="https://images.unsplash.com/photo-1570537548284-360874d866b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGZhbGwlMjBzZWFzb258ZW58MHx8MHx8&w=1000&q=80">
+</div>                                
+</div>                               
+</div>                                
+</td>
+
+<td id="5">
+<div  class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdm_YevNHkOA9ku2M4xHDYFrrNIPiW8IyjcQ&usqp=CAU">
+</div>
+<div onclick="ci(5)" class="flip-card-back">
+<img src="https://media.istockphoto.com/id/1060423058/photo/autumn-foggy-colorful-tree-alley-in-the-park-on-a-misty-day-in-krakow-poland.jpg?s=170667a&w=0&k=20&c=R2NLbL8OUKHOcelj-w4lEMtPJyioCSpdCkri9tgklLM=">
+</div>
+</div>
+</div>
+</td>
+</tr>
+
+
+<tr>
+<td id="6">
+<div class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdm_YevNHkOA9ku2M4xHDYFrrNIPiW8IyjcQ&usqp=CAU">
+</div>
+<div onclick="ci(6)" class="flip-card-back">
+<img src="https://images.pexels.com/photos/11297917/pexels-photo-11297917.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+</div>
+</div>
+</div>
+</td>
+
+<td id="7">
+<div  class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdm_YevNHkOA9ku2M4xHDYFrrNIPiW8IyjcQ&usqp=CAU">
+</div>
+<div  onclick="ci(7)" class="flip-card-back">
+<img src="https://thumbs.dreamstime.com/z/pathway-forest-plitvice-lakes-croatia-deep-sunshine-48930618.jpg">
+</div>
+</div>
+</div>
+</td>
+
+<td id="8">
+<div class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdm_YevNHkOA9ku2M4xHDYFrrNIPiW8IyjcQ&usqp=CAU">
+</div>
+<div onclick="ci(8)" class="flip-card-back">
+<img src="https://media.istockphoto.com/id/1322277517/photo/wild-grass-in-the-mountains-at-sunset.jpg?s=612x612&w=0&k=20&c=6mItwwFFGqKNKEAzv0mv6TaxhLN3zSE43bWmFN--J5w=">
+</div>
+</div>
+</div>
+</td>
+
+<td id="9">
+<div class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdm_YevNHkOA9ku2M4xHDYFrrNIPiW8IyjcQ&usqp=CAU">
+</div>
+<div onclick="ci(9)" class="flip-card-back">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Erd7fKUUY2NoYNpcWp65_0x7CK_txAEhRrheaSQGD003degehhoanMugib8snbLdRro&usqp=CAU">
+</div>
+</div>
+</div>
+</td>
+
+<td id="10">
+<div class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdm_YevNHkOA9ku2M4xHDYFrrNIPiW8IyjcQ&usqp=CAU">
+</div>
+<div onclick="ci(10)" class="flip-card-back">
+<img src="https://t3.ftcdn.net/jpg/05/24/02/02/240_F_524020270_otHphE5ubm6Z3ZigSqNmyBJ8q4AjHSqs.jpg">
+</div>
+</div>
+</div>
+</td>
+</tr>
+
+
+<tr>
+<td id="11">
+<div class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdm_YevNHkOA9ku2M4xHDYFrrNIPiW8IyjcQ&usqp=CAU">
+</div>
+<div onclick="ci(11)" class="flip-card-back">
+<img src="https://images.pexels.com/photos/11297917/pexels-photo-11297917.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+</div>
+</div>
+</div>
+</td>
+
+<td id="12">
+<div class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdm_YevNHkOA9ku2M4xHDYFrrNIPiW8IyjcQ&usqp=CAU">
+</div>
+<div onclick="ci(12)" class="flip-card-back">
+<img src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg">
+</div>
+</div>
+</div>
+</td>
+
+<td id="13">
+<div class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdm_YevNHkOA9ku2M4xHDYFrrNIPiW8IyjcQ&usqp=CAU">
+</div>
+<div onclick="ci(13)" class="flip-card-back">
+<img src="https://media.istockphoto.com/id/1060423058/photo/autumn-foggy-colorful-tree-alley-in-the-park-on-a-misty-day-in-krakow-poland.jpg?s=170667a&w=0&k=20&c=R2NLbL8OUKHOcelj-w4lEMtPJyioCSpdCkri9tgklLM=">
+</div>
+</div>
+</div>
+</td>
+
+<td id="14">
+<div class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdm_YevNHkOA9ku2M4xHDYFrrNIPiW8IyjcQ&usqp=CAU">
+</div>
+<div onclick="ci(14)" class="flip-card-back">
+<img src="https://t3.ftcdn.net/jpg/05/24/02/02/240_F_524020270_otHphE5ubm6Z3ZigSqNmyBJ8q4AjHSqs.jpg">
+</div>
+</div>
+</div>
+</td>
+
+<td  id="15">
+<div class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdm_YevNHkOA9ku2M4xHDYFrrNIPiW8IyjcQ&usqp=CAU">
+</div>
+<div onclick="ci(15)" class="flip-card-back">
+<img src="https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg">
+</div>
+</div>
+</div>
+</td>
+</tr>
+
+
+<tr>
+<td id="16">
+<div class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdm_YevNHkOA9ku2M4xHDYFrrNIPiW8IyjcQ&usqp=CAU">
+</div>
+<div onclick="ci(16)" class="flip-card-back">
+<img src="https://images.unsplash.com/photo-1570537548284-360874d866b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGZhbGwlMjBzZWFzb258ZW58MHx8MHx8&w=1000&q=80">
+</div>
+</div>
+</div>
+</td>
+
+<td id="17">
+<div class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdm_YevNHkOA9ku2M4xHDYFrrNIPiW8IyjcQ&usqp=CAU">
+</div>
+<div onclick="ci(17)" class="flip-card-back">
+<img src="https://media.istockphoto.com/id/1322277517/photo/wild-grass-in-the-mountains-at-sunset.jpg?s=612x612&w=0&k=20&c=6mItwwFFGqKNKEAzv0mv6TaxhLN3zSE43bWmFN--J5w=">
+</div>
+</div>
+</div>
+</td>
+
+<td id="18">
+<div class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdm_YevNHkOA9ku2M4xHDYFrrNIPiW8IyjcQ&usqp=CAU">
+</div>
+<div onclick="ci(18)" class="flip-card-back">
+<img src="https://images.unsplash.com/photo-1533730911051-a16ebfa428a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cml2ZXIlMjBicmlkZ2V8ZW58MHx8MHx8&w=1000&q=80">
+</div>
+</div>
+</div>
+</td>
+
+<td id="19">
+<div class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdm_YevNHkOA9ku2M4xHDYFrrNIPiW8IyjcQ&usqp=CAU">
+</div>
+<div onclick="ci(19)" class="flip-card-back">
+<img src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg">
+</div>
+</div>
+</div>
+</td>
+
+<td id="20">
+<div class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdm_YevNHkOA9ku2M4xHDYFrrNIPiW8IyjcQ&usqp=CAU">
+</div>
+<div onclick="ci(20)" class="flip-card-back">
+<img src="https://images.unsplash.com/photo-1533730911051-a16ebfa428a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cml2ZXIlMjBicmlkZ2V8ZW58MHx8MHx8&w=1000&q=80">
+</div>
+</div>
+</div>
+</td>
+</tr>
+
+</table>
+</div>
+
+<br>
+<br>
+<button onClick="window.location.reload();">PLAY AGAIN</button>
+<br>
+<br>
+
+<label id="life" style="color:white;"></label>
+<label style="color:white;"><i>NUMBER OF CARDS MATCHED:</i></label>
+<label id="score" style="color:white;"></label>
+
+<h3 style="color:white;">COLOURS ARE SMILES OF NATURE</h3>
+
+</center>
+
+</body>
+</html>
